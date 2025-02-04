@@ -1,1 +1,1 @@
-alert tcp $EXTERNAL_NET any -> $HOME_NET $HTTP_PORTS (msg:"Snort 5 min-task"; content:"Snort5MinTask"; nocase; pcre:"/User-Agent\:[^\n]+Snort5MinTask/i"; reference:url,www.gnu.org/software/wget/; sid:2002823; rev:1;)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 80 (msg:"Block pdf files over HTTP"; content:".pdf";)
